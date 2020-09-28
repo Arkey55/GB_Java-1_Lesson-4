@@ -156,9 +156,8 @@ public class Main {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field.length; j++) {
                 if (field[i][j] == e){
-                    field[i][j] = x;
-                    if (isWin(field, x)){
-                        field[i][j] = o;
+                    field[i][j] = o;
+                    if (isWin(field, o)){
                         return;
                     } else {
                         field[i][j] = e;
@@ -169,8 +168,9 @@ public class Main {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field.length; j++) {
                 if (field[i][j] == e){
-                    field[i][j] = o;
-                    if (isWin(field, o)){
+                    field[i][j] = x;
+                    if (isWin(field, x)){
+                        field[i][j] = o;
                         return;
                     } else {
                         field[i][j] = e;
