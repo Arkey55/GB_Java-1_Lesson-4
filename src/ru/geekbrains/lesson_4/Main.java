@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    static int size;
+    static int sizeOfField;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
@@ -14,7 +14,7 @@ public class Main {
     static void runGame(Scanner scanner, Random random){
         System.out.println("Пожалуйста, укажите размер поля!");
         int fieldSize = scanner.nextInt();
-        size = fieldSize;
+        sizeOfField = fieldSize;
         char[][] gameField = createField(fieldSize);
         drawField(gameField);
 
@@ -61,7 +61,7 @@ public class Main {
         do {
             System.out.println(String.format("Введите %s-координату", coordName));
             coordinate = scanner.nextInt() - 1;
-        } while (coordinate < 0 || coordinate > size - 1);
+        } while (coordinate < 0 || coordinate > sizeOfField - 1);
         return coordinate;
     }
 
@@ -81,8 +81,8 @@ public class Main {
             return;
         }
         do {
-            x = random.nextInt(size);
-            y = random.nextInt(size);
+            x = random.nextInt(sizeOfField);
+            y = random.nextInt(sizeOfField);
         } while (field[x][y] != '-');
         field[x][y] = 'O';
     }
