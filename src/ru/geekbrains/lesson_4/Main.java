@@ -48,12 +48,14 @@ public class Main {
         for (int i = 0; i < gameField.length; i++) {
             for (int j = 0; j < gameField.length; j++) {
                 System.out.print(gameField[i][j]);
+                System.out.print(" ");
             }
             System.out.println();
         }
     }
 
-    //=== Логика игры ===
+    //=== Координаты и ходы ===
+
     static int getCoordinate (Scanner scanner, char coordName){
         int coordinate;
         do {
